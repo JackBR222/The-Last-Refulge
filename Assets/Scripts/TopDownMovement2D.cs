@@ -1,46 +1,40 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TopDownMovement2D : MonoBehaviour
 {
     [Header("Movimentação")]
-    [Tooltip("Velocidade em unidades por segundo.")]
     public float moveSpeed = 5f;
 
     [Header("Referências")]
     public Rigidbody2D rb;
-    public Animator animator; // opcional
+    public Animator animator;
 
-    // Cache de entrada
     private Vector2 rawInput;
+    public bool canMove = true;
 
-    // Controla se o jogador pode se mover
-    public bool canMove = true; // Adiciona o booleano para ativar/desativar movimento
+    private PlayerInput playerInput;
+    private InputAction moveAction;
 
     void Awake()
     {
         if (rb == null) rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
         rb.freezeRotation = true;
+
+        // Obtém a referência ao PlayerInput e à ação de movimento
+        playerInput = GetComponent<PlayerInput>();
+        moveAction = playerInput.actions["Move"];
     }
 
     void Update()
     {
-        if (!canMove)
-        {
-            // Zera a entrada quando o movimento é desativado
-            rawInput = Vector2.zero;
-            return; // Ignora qualquer entrada do jogador
-        }
+        if (!canMove) return;
 
-        // Entrada do jogador (WASD ou Setas)
-        rawInput = new Vector2(
-            Input.GetAxisRaw("Horizontal"),
-            Input.GetAxisRaw("Vertical")
-        );
+        // Entrada do jogador (novo sistema de input)
+        rawInput = moveAction.ReadValue<Vector2>().normalized;
 
-        rawInput = Vector2.ClampMagnitude(rawInput, 1f);
-
-        // Atualiza parâmetros no Animator, se existir
+        // Atualiza parâmetros no Animator, se houver
         if (animator != null)
         {
             animator.SetFloat("MoveX", rawInput.x);
@@ -51,14 +45,15 @@ public class TopDownMovement2D : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!canMove)
+        if (canMove)
         {
-            // Garante que o movimento pare imediatamente, desativando a velocidade
-            rb.linearVelocity = Vector2.zero;
-            return; // Não aplica nenhum movimento no FixedUpdate
+            // Aplica o movimento imediato sem aceleração
+            rb.linearVelocity = rawInput * moveSpeed;
         }
-
-        // Move o personagem diretamente com base na entrada
-        rb.linearVelocity = rawInput * moveSpeed;
+        else
+        {
+            // Garante que o movimento pare ao desabilitar o movimento
+            rb.linearVelocity = Vector2.zero;
+        }
     }
 }
