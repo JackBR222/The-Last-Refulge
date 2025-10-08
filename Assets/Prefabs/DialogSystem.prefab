@@ -33,7 +33,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 399.99997, y: 164.61537}
+  m_AnchoredPosition: {x: 2.85725, y: -0.74156}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9066330534325984749
@@ -53,18 +53,12 @@ MonoBehaviour:
   dialoguePanel: {fileID: 0}
   characterImage: {fileID: 0}
   lines:
-  - Hello!
-  - Bye!
-  - Hi!
-  - Goodbye!
-  - That's an hell of an dialogue.
-  - For real.
+  - Test
+  - Test 2
+  - Test 3
   characterSprites:
-  - {fileID: -3321797595990342870, guid: 7765327a2c8924f46addcac6f05fb05b, type: 3}
-  - {fileID: -3321797595990342870, guid: 7765327a2c8924f46addcac6f05fb05b, type: 3}
-  - {fileID: 202614691394865526, guid: 7a3985b56356e5e479636dea231a333e, type: 3}
-  - {fileID: 202614691394865526, guid: 7a3985b56356e5e479636dea231a333e, type: 3}
-  - {fileID: 0}
+  - {fileID: -6412250644071944085, guid: 9e41bc317d8a28940a93c27f548d6e14, type: 3}
+  - {fileID: -6412250644071944085, guid: 9e41bc317d8a28940a93c27f548d6e14, type: 3}
   - {fileID: -6412250644071944085, guid: 9e41bc317d8a28940a93c27f548d6e14, type: 3}
   autoStart: 0
   useTypewriter: 1
@@ -73,9 +67,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TopDownMovement2D, Assembly-CSharp
-        m_MethodName: set_enabled
-        m_Mode: 6
+        m_TargetAssemblyTypeName: UnityEngine.InputSystem.PlayerInput, Unity.InputSystem
+        m_MethodName: DeactivateInput
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -88,9 +82,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TopDownMovement2D, Assembly-CSharp
-        m_MethodName: set_enabled
-        m_Mode: 6
+        m_TargetAssemblyTypeName: UnityEngine.InputSystem.PlayerInput, Unity.InputSystem
+        m_MethodName: ActivateInput
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
