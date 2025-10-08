@@ -5,9 +5,8 @@ using UnityEngine.InputSystem;
 public class NPCInteractDialogue : MonoBehaviour
 {
     [Header("Configuração de Interação")]
-    [SerializeField] private string[] dialogueLines;
-    [SerializeField] private DialogueManager dialogueManager;
-    [SerializeField] private Sprite[] npcSprites;
+    [SerializeField] private TextAsset inkFile;  // Arquivo .ink que contém o diálogo
+    [SerializeField] private InkDialogueManager dialogueManager;  // Referência ao DialogueManager do jogo
 
     [Header("Condição de Direção")]
     [Tooltip("Ângulo máximo permitido entre a direção que o player está olhando e o NPC para permitir interação.")]
@@ -20,7 +19,6 @@ public class NPCInteractDialogue : MonoBehaviour
     private InputAction interactAction;
     private Transform playerTransform;
     private Animator playerAnimator;
-    private PlayerMove playerMove;
 
     private void Awake()
     {
@@ -34,7 +32,6 @@ public class NPCInteractDialogue : MonoBehaviour
 
         playerInput = player.GetComponent<PlayerInput>();
         playerTransform = player.transform;
-        playerMove = player.GetComponent<PlayerMove>();
 
         // Procura o Animator no filho chamado 'Sprite'
         Transform spriteChild = playerTransform.Find("Sprite");
@@ -53,8 +50,6 @@ public class NPCInteractDialogue : MonoBehaviour
 
         if (playerInput == null)
             Debug.LogError("[NPCInteractDialogue] PlayerInput não encontrado no jogador!");
-        if (playerMove == null)
-            Debug.LogWarning("[NPCInteractDialogue] PlayerMove não encontrado! Última direção não será usada.");
 
         interactAction = playerInput?.actions["Interact"];
         if (interactAction == null)
@@ -86,24 +81,9 @@ public class NPCInteractDialogue : MonoBehaviour
             playerAnimator.GetFloat("MoveY")
         );
 
-        // Se parado, usa última direção do PlayerMove
-        if (playerFacing == Vector2.zero && playerMove != null)
-        {
-            playerFacing = playerMove.LastDirection;
-        }
-
-        playerFacing.Normalize();
-
+        // Permite interação se estiver olhando dentro do ângulo permitido
         float angle = Vector2.Angle(playerFacing, toNPC);
 
-        // Debug para visualização no Scene view
-        Debug.DrawLine(playerTransform.position, transform.position, Color.yellow); // linha player->NPC
-        Debug.DrawRay(playerTransform.position, playerFacing * 1.2f, Color.green);   // direção olhando player
-
-        Debug.Log($"[NPCInteractDialogue] Angle between playerFacing and toNPC: {angle}°");
-        Debug.Log($"[NPCInteractDialogue] playerFacing: {playerFacing}, toNPC: {toNPC}");
-
-        // Permite interação se estiver olhando dentro do ângulo permitido
         return angle <= maxFacingAngle;
     }
 
@@ -123,15 +103,15 @@ public class NPCInteractDialogue : MonoBehaviour
     {
         Debug.Log("[NPCInteractDialogue] Interagindo com o NPC...");
 
-        if (dialogueManager != null && dialogueLines.Length > 0)
+        // Verifica se o DialogueManager e o arquivo Ink estão configurados
+        if (dialogueManager != null && inkFile != null)
         {
-            dialogueManager.SetDialogueLines(dialogueLines);
-            dialogueManager.SetCharacterSprites(npcSprites);
-            dialogueManager.StartDialogue();
+            // Chama o método do DialogueManager para iniciar o diálogo com o arquivo .ink
+            dialogueManager.StartDialogue(inkFile);
         }
         else
         {
-            Debug.LogWarning("[NPCInteractDialogue] Não há falas configuradas ou DialogueManager não encontrado.");
+            Debug.LogWarning("[NPCInteractDialogue] DialogueManager ou arquivo .ink não configurados.");
         }
     }
 }
