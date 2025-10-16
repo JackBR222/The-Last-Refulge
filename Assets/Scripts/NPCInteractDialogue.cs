@@ -5,24 +5,28 @@ using UnityEngine.InputSystem;
 public class NPCInteractDialogue : MonoBehaviour
 {
     [Header("Configuração de Interação")]
-    [SerializeField] private TextAsset inkFile;  // Arquivo .ink que contém o diálogo
-    [SerializeField] private InkDialogueManager dialogueManager;  // Referência ao DialogueManager do jogo
+    [SerializeField] private TextAsset inkFile;
+    [SerializeField] private InkDialogueManager dialogueManager;
 
     [Header("Condição de Direção")]
     [Tooltip("Ângulo máximo permitido entre a direção que o player está olhando e o NPC para permitir interação.")]
     [Range(10f, 90f)]
-    [SerializeField] private float maxFacingAngle = 35f; // em graus
+    [SerializeField] private float maxFacingAngle = 35f;
+
+    [Header("Indicador Visual")]
+    [SerializeField] private GameObject visualCue;
 
     private bool playerInRange = false;
+    private bool isDialogueActive = false;
+    private bool canTalk = true;  // Controle se o NPC pode mais iniciar diálogo
 
     private PlayerInput playerInput;
     private InputAction interactAction;
     private Transform playerTransform;
-    private Animator playerAnimator;
+    private PlayerMove playerMove;
 
     private void Awake()
     {
-        // Localiza o jogador e componentes relevantes
         GameObject player = GameObject.FindWithTag("Player");
         if (player == null)
         {
@@ -32,21 +36,7 @@ public class NPCInteractDialogue : MonoBehaviour
 
         playerInput = player.GetComponent<PlayerInput>();
         playerTransform = player.transform;
-
-        // Procura o Animator no filho chamado 'Sprite'
-        Transform spriteChild = playerTransform.Find("Sprite");
-        if (spriteChild != null)
-        {
-            playerAnimator = spriteChild.GetComponent<Animator>();
-            if (playerAnimator == null)
-            {
-                Debug.LogError("[NPCInteractDialogue] Animator não encontrado no objeto filho 'Sprite'.");
-            }
-        }
-        else
-        {
-            Debug.LogError("[NPCInteractDialogue] Objeto filho 'Sprite' não encontrado no Player.");
-        }
+        playerMove = player.GetComponent<PlayerMove>();
 
         if (playerInput == null)
             Debug.LogError("[NPCInteractDialogue] PlayerInput não encontrado no jogador!");
@@ -54,64 +44,79 @@ public class NPCInteractDialogue : MonoBehaviour
         interactAction = playerInput?.actions["Interact"];
         if (interactAction == null)
             Debug.LogError("[NPCInteractDialogue] A ação 'Interact' não foi encontrada nas configurações de Input!");
+
+        if (visualCue != null)
+            visualCue.SetActive(false);
     }
 
     private void Update()
     {
-        if (!playerInRange || interactAction == null)
-            return;
-
-        if (interactAction.triggered && PlayerIsFacingNPC())
+        if (!canTalk)
         {
-            StartDialogue();
+            if (visualCue != null)
+                visualCue.SetActive(false);
+            return;
+        }
+
+        if (interactAction == null || isDialogueActive || !playerMove.canMove)
+        {
+            if (visualCue != null)
+                visualCue.SetActive(false);
+            return;
+        }
+
+        bool canInteract = playerInRange && IsPlayerFacingNPC();
+
+        if (visualCue != null)
+            visualCue.SetActive(canInteract);
+
+        if (canInteract && interactAction.triggered)
+        {
+            isDialogueActive = true;
+            visualCue.SetActive(false);
+            dialogueManager.StartDialogue(inkFile, this);
         }
     }
 
-    private bool PlayerIsFacingNPC()
+    private bool IsPlayerFacingNPC()
     {
-        if (playerTransform == null || playerAnimator == null)
-            return false;
+        Vector2 directionToNPC = (transform.position - playerTransform.position).normalized;
+        Vector2 playerFacingDirection = playerMove.LastDirection.normalized;
 
-        // Vetor do player para o NPC
-        Vector2 toNPC = (transform.position - playerTransform.position).normalized;
-
-        // Direção que o player está olhando (Animator do filho Sprite)
-        Vector2 playerFacing = new Vector2(
-            playerAnimator.GetFloat("MoveX"),
-            playerAnimator.GetFloat("MoveY")
-        );
-
-        // Permite interação se estiver olhando dentro do ângulo permitido
-        float angle = Vector2.Angle(playerFacing, toNPC);
-
+        float angle = Vector2.Angle(directionToNPC, playerFacingDirection);
         return angle <= maxFacingAngle;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
+        {
             playerInRange = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
+        {
             playerInRange = false;
+            if (visualCue != null)
+                visualCue.SetActive(false);
+        }
     }
 
-    private void StartDialogue()
+    public void OnDialogueEnd()
     {
-        Debug.Log("[NPCInteractDialogue] Interagindo com o NPC...");
+        isDialogueActive = false;
+    }
 
-        // Verifica se o DialogueManager e o arquivo Ink estão configurados
-        if (dialogueManager != null && inkFile != null)
-        {
-            // Chama o método do DialogueManager para iniciar o diálogo com o arquivo .ink
-            dialogueManager.StartDialogue(inkFile);
-        }
-        else
-        {
-            Debug.LogWarning("[NPCInteractDialogue] DialogueManager ou arquivo .ink não configurados.");
-        }
+    /// <summary>
+    /// Desativa a possibilidade de falar com o NPC (chame via evento InkTagEventTrigger)
+    /// </summary>
+    public void DisableInteraction()
+    {
+        canTalk = false;
+        if (visualCue != null)
+            visualCue.SetActive(false);
     }
 }

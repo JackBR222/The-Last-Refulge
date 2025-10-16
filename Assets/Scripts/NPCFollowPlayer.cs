@@ -86,20 +86,26 @@ public class NPCFollowPlayer : MonoBehaviour
     {
         if (animator == null) return;
 
-        // Atualiza a anima��o com base na dire��o e velocidade do NPC
-        animator.SetFloat("Speed", rb.linearVelocity.magnitude);
+        float currentSpeed = rb.linearVelocity.magnitude;
 
-        if (rb.linearVelocity.magnitude > 0)
+        animator.SetFloat("Speed", currentSpeed);
+
+        if (currentSpeed > 0)
         {
             animator.SetBool("IsMoving", true);
             animator.SetFloat("MoveX", directionToPlayer.x);
             animator.SetFloat("MoveY", directionToPlayer.y);
+
+            // Define IsRunning com base na velocidade atual
+            animator.SetBool("IsRunning", speed == runSpeed);
         }
         else
         {
             animator.SetBool("IsMoving", false);
+            animator.SetBool("IsRunning", false);
         }
     }
+
 
     // Adiciona o m�todo StartFollowing
     public void StartFollowing()

@@ -1,176 +1,238 @@
+ï»¿using Ink.Runtime;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;                // Necessário para Button, Image
-using TMPro;                         // Necessário para TextMeshProUGUI
-using Ink.Runtime;                   // Necessário para Story e Choice
-using System.Collections;            // Necessário para IEnumerator
-using System.Collections.Generic;    // Necessário para listas e coleções
-using System.Text.RegularExpressions; // Necessário para Regex
+using UnityEngine.UI;
 
 public class InkDialogueManager : MonoBehaviour
 {
-    [Header("Referências de UI")]
+    [Header("ReferÃªncias de UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Button nextButton;
     [SerializeField] private Transform choicesContainer;
     [SerializeField] private GameObject choiceButtonPrefab;
 
-    [Header("Nome e Retrato")]
-    [SerializeField] private TextMeshProUGUI characterNameText;
-    [SerializeField] private Image characterPortraitImage;
-    [SerializeField] private Sprite defaultPortrait;
-
-    [Header("Ink JSON")]
-    [SerializeField] private TextAsset inkJSONAsset;
-
-    [Header("Configuração")]
+    [Header("ConfiguraÃ§Ãµes de DigitaÃ§Ã£o")]
     [SerializeField] private float typingSpeed = 0.02f;
     [SerializeField] private bool useTypewriter = true;
 
+    [Header("Arquivo JSON do Ink")]
+    [SerializeField] private TextAsset inkJsonFile;
+
+    [Header("Script dos Retratos")]
+    [SerializeField] private DialoguePortraitManager portraitManager;
+
+    [Header("ReferÃªncias de Jogador")]
+    [SerializeField] private PlayerMove playerMove;
+
     private Story currentStory;
     private Coroutine typingCoroutine;
+    private AudioSource currentVoiceAudio;
 
-    private string currentCharacterName = "Desconhecido";
-    private Sprite currentCharacterPortrait;
+    private InkTagEventTrigger[] tagEventTriggers;
 
-    private void Awake()
+    private NPCInteractDialogue currentNPC; // ReferÃªncia ao NPC que iniciou diÃ¡logo
+
+    private const string SPEAKER_TAG = "speaker";
+    private const string PORTRAIT_TAG = "portrait";
+    private const string AUDIO_TAG = "audio";
+
+    void Awake()
     {
         if (nextButton != null)
             nextButton.onClick.AddListener(NextLine);
         else
-            Debug.LogWarning("Botão 'Next' não atribuído!");  // Caso o botão não tenha sido atribuído.
+            Debug.LogWarning("BotÃ£o 'Next' nÃ£o atribuÃ­do!");
 
-        dialoguePanel?.SetActive(false);  // Desabilita o painel de diálogo na inicialização.
+        dialoguePanel?.SetActive(false);
+
+        if (portraitManager == null)
+            Debug.LogWarning("Portrait Manager nÃ£o atribuÃ­do!");
+
+        if (playerMove == null)
+            Debug.LogError("PlayerMove nÃ£o atribuÃ­do!");
     }
 
-    private void Start()
+    void Start()
     {
-        if (inkJSONAsset != null)
+        if (inkJsonFile != null)
         {
-            StartDialogue(inkJSONAsset);  // Inicia o diálogo com o arquivo .ink
+            // NÃ£o iniciar diÃ¡logo automaticamente aqui.
         }
         else
         {
-            Debug.LogError("Arquivo Ink JSON não atribuído!");
+            Debug.LogError("Arquivo JSON do Ink nÃ£o foi atribuÃ­do.");
         }
     }
 
-    public void StartDialogue(TextAsset inkJSON)
+    public void StartDialogue(TextAsset inkJSON, NPCInteractDialogue npc = null)
     {
-        // Cria a história a partir do arquivo .ink
         currentStory = new Story(inkJSON.text);
-        dialoguePanel.SetActive(true);  // Ativa o painel de diálogo.
+        dialoguePanel.SetActive(true);
 
-        NextLine();  // Inicia o diálogo com a primeira linha.
+        if (playerMove != null)
+            playerMove.canMove = false;
+
+        // Pega todos os InkTagEventTriggers ativos na cena
+        tagEventTriggers = FindObjectsByType<InkTagEventTrigger>(FindObjectsSortMode.None);
+
+        currentNPC = npc; // Guarda referÃªncia ao NPC
+
+        NextLine();
     }
 
     public void NextLine()
     {
-        // Verifica se o diálogo ainda pode continuar
         if (currentStory == null || !currentStory.canContinue)
         {
             EndDialogue();
             return;
         }
 
-        nextButton.gameObject.SetActive(false);  // Desativa o botão "Next" enquanto a linha está sendo digitada.
+        nextButton.gameObject.SetActive(false);
 
         if (typingCoroutine != null)
-            StopCoroutine(typingCoroutine);  // Para qualquer coroutine de digitação em andamento.
+            StopCoroutine(typingCoroutine);
 
-        string line = currentStory.Continue().Trim();  // Obtém a próxima linha da história.
+        string line = currentStory.Continue().Trim();
 
-        ParseCharacterInfoFromTags(line);  // Analisa os metadados de personagem (nome, retrato, etc.) na linha.
+        HandleTags(currentStory.currentTags);
 
         if (useTypewriter)
-            typingCoroutine = StartCoroutine(TypeLine(line));  // Exibe a linha de forma "escrita".
+            typingCoroutine = StartCoroutine(TypeLine(line));
         else
-            dialogueText.text = line;  // Exibe a linha toda de uma vez.
+        {
+            dialogueText.text = line;
+            ShowChoices();
+        }
     }
 
     private IEnumerator TypeLine(string line)
     {
-        dialogueText.text = "";  // Limpa o texto de diálogo atual.
+        dialogueText.text = "";
 
-        // Exibe cada letra uma por uma, com o intervalo configurado.
+        if (currentVoiceAudio != null)
+        {
+            currentVoiceAudio.loop = true;
+            currentVoiceAudio.Play();
+        }
+
         foreach (char letter in line)
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
 
-        ShowChoices();  // Após terminar de escrever, exibe as escolhas, se houver.
+        if (currentVoiceAudio != null)
+        {
+            currentVoiceAudio.Stop();
+            currentVoiceAudio.loop = false;
+            currentVoiceAudio = null;
+        }
+
+        HandleTags(currentStory.currentTags);
+        ShowChoices();
     }
 
     private void ShowChoices()
     {
-        // Remove as escolhas antigas, se houver.
         foreach (Transform child in choicesContainer)
         {
             Destroy(child.gameObject);
         }
 
-        // Exibe as novas escolhas, se existirem.
         if (currentStory.currentChoices.Count > 0)
         {
-            nextButton.gameObject.SetActive(false);  // Desativa o botão "Next" durante a exibição das escolhas.
+            nextButton.gameObject.SetActive(false);
 
             foreach (Choice choice in currentStory.currentChoices)
             {
-                // Cria um botão de escolha para cada uma das opções.
                 GameObject choiceButton = Instantiate(choiceButtonPrefab, choicesContainer);
                 TextMeshProUGUI buttonText = choiceButton.GetComponentInChildren<TextMeshProUGUI>();
                 buttonText.text = choice.text;
 
                 Button button = choiceButton.GetComponent<Button>();
-                button.onClick.AddListener(() => OnChoiceSelected(choice, choiceButton));  // Configura a ação do botão.
+                button.onClick.AddListener(() => MakeChoice(choice));
             }
         }
         else
         {
-            nextButton.gameObject.SetActive(true);  // Ativa o botão "Next" se não houver escolhas.
+            nextButton.gameObject.SetActive(true);
         }
     }
 
-    private void OnChoiceSelected(Choice choice, GameObject selectedButton)
+    private void MakeChoice(Choice choice)
     {
-        // Remove as escolhas antigas quando uma for selecionada.
+        currentStory.ChooseChoiceIndex(choice.index);
+
         foreach (Transform child in choicesContainer)
         {
             Destroy(child.gameObject);
         }
 
-        // Avança na história para a escolha selecionada.
-        currentStory.ChooseChoiceIndex(choice.index);
-
-        NextLine();  // Exibe a próxima linha de diálogo.
-
-        Destroy(selectedButton);  // Destroi o botão de escolha após a seleção.
+        NextLine();
     }
 
-    private void ParseCharacterInfoFromTags(string line)
+    private void HandleTags(List<string> currentTags)
     {
-        // Usando Regex para extrair informações de nome e retrato do personagem.
-        var nameMatch = Regex.Match(line, @"#speaker\s*:\s*(\w+)");
-        var portraitMatch = Regex.Match(line, @"#portrait\s*:\s*(\w+)");
+        string speakerName = null;
+        string portraitName = null;
+        string audioName = null;
 
-        if (nameMatch.Success)
+        foreach (string tag in currentTags)
         {
-            currentCharacterName = nameMatch.Groups[1].Value;
-            characterNameText.text = currentCharacterName;  // Atualiza o nome do personagem.
+            string[] splitTag = tag.Split(':');
+            if (splitTag.Length != 2)
+            {
+                Debug.LogError("Tag invÃ¡lida: " + tag);
+                continue;
+            }
+
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+
+            switch (tagKey)
+            {
+                case SPEAKER_TAG:
+                    speakerName = tagValue;
+                    break;
+
+                case PORTRAIT_TAG:
+                    portraitName = tagValue;
+                    break;
+
+                case AUDIO_TAG:
+                    audioName = tagValue;
+                    break;
+            }
+
+            // Notifica eventos externos
+            if (tagEventTriggers != null)
+            {
+                foreach (var trigger in tagEventTriggers)
+                {
+                    trigger.CheckTag(tag);
+                }
+            }
         }
 
-        if (portraitMatch.Success)
-        {
-            string characterPortrait = portraitMatch.Groups[1].Value;
-            currentCharacterPortrait = Resources.Load<Sprite>(characterPortrait);
-            characterPortraitImage.sprite = currentCharacterPortrait ? currentCharacterPortrait : defaultPortrait;  // Define o retrato do personagem.
-        }
+        if (portraitManager != null)
+            currentVoiceAudio = portraitManager.HandleTags(speakerName, portraitName, audioName);
     }
 
     private void EndDialogue()
     {
-        dialoguePanel?.SetActive(false);  // Desativa o painel de diálogo.
-        currentStory = null;  // Limpa a história atual.
+        dialoguePanel.SetActive(false);
+
+        if (playerMove != null)
+            playerMove.canMove = true;
+
+        if (currentNPC != null)
+        {
+            currentNPC.OnDialogueEnd();  // <- Isso Ã© o que reinicia a possibilidade de interagir
+            currentNPC = null;
+        }
     }
 }
