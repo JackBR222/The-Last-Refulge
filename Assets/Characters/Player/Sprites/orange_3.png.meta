@@ -1313,7 +1313,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_16
+      name: lookS_1
       rect:
         serializedVersion: 2
         x: 134
@@ -1335,7 +1335,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_17
+      name: lookS_2
       rect:
         serializedVersion: 2
         x: 167
@@ -1357,7 +1357,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_18
+      name: lookS_3
       rect:
         serializedVersion: 2
         x: 201
@@ -1379,7 +1379,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_19
+      name: lookS_4
       rect:
         serializedVersion: 2
         x: 233
@@ -1401,7 +1401,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_20
+      name: laydownS_1
       rect:
         serializedVersion: 2
         x: 265
@@ -1423,7 +1423,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_21
+      name: laydownS_2
       rect:
         serializedVersion: 2
         x: 297
@@ -1445,7 +1445,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_22
+      name: laydownS_3
       rect:
         serializedVersion: 2
         x: 329
@@ -1467,7 +1467,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_23
+      name: laydownS_4
       rect:
         serializedVersion: 2
         x: 361
@@ -1577,7 +1577,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_28
+      name: lookS_5
       rect:
         serializedVersion: 2
         x: 137
@@ -1599,7 +1599,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_29
+      name: laydownS_5
       rect:
         serializedVersion: 2
         x: 265
@@ -1621,7 +1621,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_30
+      name: laydownS_6
       rect:
         serializedVersion: 2
         x: 297
@@ -1643,7 +1643,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_31
+      name: laydownS_7
       rect:
         serializedVersion: 2
         x: 329
@@ -1665,7 +1665,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_32
+      name: laydownS_8
       rect:
         serializedVersion: 2
         x: 361
@@ -1885,7 +1885,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_42
+      name: lookSW_1
       rect:
         serializedVersion: 2
         x: 131
@@ -1907,7 +1907,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_43
+      name: lookSW_2
       rect:
         serializedVersion: 2
         x: 163
@@ -1929,7 +1929,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_44
+      name: lookSW_3
       rect:
         serializedVersion: 2
         x: 195
@@ -1951,7 +1951,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_45
+      name: lookSW_4
       rect:
         serializedVersion: 2
         x: 229
@@ -1973,7 +1973,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_46
+      name: laydownSW_1
       rect:
         serializedVersion: 2
         x: 259
@@ -1995,7 +1995,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_47
+      name: laydownSW_2
       rect:
         serializedVersion: 2
         x: 290
@@ -2017,7 +2017,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_48
+      name: laydownSW_3
       rect:
         serializedVersion: 2
         x: 321
@@ -2039,7 +2039,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_49
+      name: laydownSW_4
       rect:
         serializedVersion: 2
         x: 352
@@ -2369,7 +2369,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_64
+      name: lookSW_5
       rect:
         serializedVersion: 2
         x: 133
@@ -2391,7 +2391,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_65
+      name: laydownSW_5
       rect:
         serializedVersion: 2
         x: 255
@@ -2413,7 +2413,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_66
+      name: laydownSW_6
       rect:
         serializedVersion: 2
         x: 287
@@ -2435,7 +2435,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_67
+      name: laydownSW_7
       rect:
         serializedVersion: 2
         x: 319
@@ -2457,7 +2457,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_68
+      name: laydownSW_8
       rect:
         serializedVersion: 2
         x: 351
@@ -2677,7 +2677,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_78
+      name: lookW_1
       rect:
         serializedVersion: 2
         x: 133
@@ -2699,7 +2699,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_79
+      name: lookW_2
       rect:
         serializedVersion: 2
         x: 163
@@ -2721,7 +2721,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_80
+      name: lookW_3
       rect:
         serializedVersion: 2
         x: 195
@@ -2743,7 +2743,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_81
+      name: lookW_4
       rect:
         serializedVersion: 2
         x: 227
@@ -2765,7 +2765,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_82
+      name: laydownW_1
       rect:
         serializedVersion: 2
         x: 259
@@ -2787,7 +2787,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_83
+      name: laydownW_2
       rect:
         serializedVersion: 2
         x: 291
@@ -2809,7 +2809,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_84
+      name: laydownW_3
       rect:
         serializedVersion: 2
         x: 323
@@ -2831,7 +2831,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_85
+      name: laydownW_4
       rect:
         serializedVersion: 2
         x: 354
@@ -3161,7 +3161,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_100
+      name: lookW_5
       rect:
         serializedVersion: 2
         x: 133
@@ -3183,7 +3183,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_101
+      name: laydownW_5
       rect:
         serializedVersion: 2
         x: 257
@@ -3205,7 +3205,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_102
+      name: laydownW_6
       rect:
         serializedVersion: 2
         x: 288
@@ -3227,7 +3227,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_103
+      name: laydownW_7
       rect:
         serializedVersion: 2
         x: 319
@@ -3249,7 +3249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_104
+      name: laydownW_8
       rect:
         serializedVersion: 2
         x: 351
@@ -3469,7 +3469,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_114
+      name: lookNW_1
       rect:
         serializedVersion: 2
         x: 137
@@ -3491,7 +3491,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_115
+      name: lookNW_2
       rect:
         serializedVersion: 2
         x: 165
@@ -3513,7 +3513,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_116
+      name: lookNW_3
       rect:
         serializedVersion: 2
         x: 195
@@ -3535,7 +3535,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_117
+      name: lookNW_4
       rect:
         serializedVersion: 2
         x: 227
@@ -3557,7 +3557,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_118
+      name: laydownNW_1
       rect:
         serializedVersion: 2
         x: 259
@@ -3579,7 +3579,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_119
+      name: laydownNW_2
       rect:
         serializedVersion: 2
         x: 290
@@ -3601,7 +3601,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_120
+      name: laydownNW_3
       rect:
         serializedVersion: 2
         x: 322
@@ -3623,7 +3623,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_121
+      name: laydownNW_4
       rect:
         serializedVersion: 2
         x: 354
@@ -3953,7 +3953,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_136
+      name: lookNW_5
       rect:
         serializedVersion: 2
         x: 131
@@ -3975,7 +3975,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_137
+      name: laydownNW_5
       rect:
         serializedVersion: 2
         x: 258
@@ -3997,7 +3997,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_138
+      name: laydownNW_6
       rect:
         serializedVersion: 2
         x: 289
@@ -4019,7 +4019,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_139
+      name: laydownNW_7
       rect:
         serializedVersion: 2
         x: 320
@@ -4041,7 +4041,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_140
+      name: laydownNW_8
       rect:
         serializedVersion: 2
         x: 351
@@ -4261,7 +4261,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_150
+      name: lookN_1
       rect:
         serializedVersion: 2
         x: 134
@@ -4283,7 +4283,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_151
+      name: lookN_2
       rect:
         serializedVersion: 2
         x: 167
@@ -4305,7 +4305,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_152
+      name: lookN_3
       rect:
         serializedVersion: 2
         x: 201
@@ -4327,7 +4327,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_153
+      name: lookN_4
       rect:
         serializedVersion: 2
         x: 234
@@ -4349,7 +4349,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_154
+      name: laydownN_1
       rect:
         serializedVersion: 2
         x: 265
@@ -4371,7 +4371,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_155
+      name: laydownN_2
       rect:
         serializedVersion: 2
         x: 297
@@ -4393,7 +4393,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_156
+      name: laydownN_3
       rect:
         serializedVersion: 2
         x: 329
@@ -4415,7 +4415,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_157
+      name: laydownN_4
       rect:
         serializedVersion: 2
         x: 361
@@ -4767,7 +4767,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_173
+      name: lookN_5
       rect:
         serializedVersion: 2
         x: 138
@@ -4789,7 +4789,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_174
+      name: laydownN_5
       rect:
         serializedVersion: 2
         x: 265
@@ -4811,7 +4811,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_175
+      name: laydownN_6
       rect:
         serializedVersion: 2
         x: 297
@@ -4833,7 +4833,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_176
+      name: laydownN_7
       rect:
         serializedVersion: 2
         x: 329
@@ -4855,7 +4855,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_177
+      name: laydownN_8
       rect:
         serializedVersion: 2
         x: 361
@@ -5075,7 +5075,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_187
+      name: lookNE_1
       rect:
         serializedVersion: 2
         x: 130
@@ -5097,7 +5097,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_188
+      name: lookNE_2
       rect:
         serializedVersion: 2
         x: 162
@@ -5119,7 +5119,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_189
+      name: lookNE_3
       rect:
         serializedVersion: 2
         x: 194
@@ -5141,7 +5141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_190
+      name: lookNE_4
       rect:
         serializedVersion: 2
         x: 226
@@ -5163,7 +5163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_191
+      name: laydownNE_1
       rect:
         serializedVersion: 2
         x: 258
@@ -5185,7 +5185,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_192
+      name: laydownNE_2
       rect:
         serializedVersion: 2
         x: 290
@@ -5207,7 +5207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_193
+      name: laydownNE_3
       rect:
         serializedVersion: 2
         x: 322
@@ -5229,7 +5229,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_194
+      name: laydownNE_4
       rect:
         serializedVersion: 2
         x: 354
@@ -5559,7 +5559,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_209
+      name: lookNE_5
       rect:
         serializedVersion: 2
         x: 130
@@ -5581,7 +5581,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_210
+      name: laydownNE_5
       rect:
         serializedVersion: 2
         x: 258
@@ -5603,7 +5603,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_211
+      name: laydownNE_6
       rect:
         serializedVersion: 2
         x: 290
@@ -5625,7 +5625,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_212
+      name: laydownNE_7
       rect:
         serializedVersion: 2
         x: 322
@@ -5647,7 +5647,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_213
+      name: laydownNE_8
       rect:
         serializedVersion: 2
         x: 354
@@ -5867,7 +5867,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_223
+      name: lookE_1
       rect:
         serializedVersion: 2
         x: 130
@@ -5889,7 +5889,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_224
+      name: lookE_2
       rect:
         serializedVersion: 2
         x: 162
@@ -5911,7 +5911,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_225
+      name: lookE_3
       rect:
         serializedVersion: 2
         x: 194
@@ -5933,7 +5933,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_226
+      name: lookE_4
       rect:
         serializedVersion: 2
         x: 226
@@ -5955,7 +5955,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_227
+      name: laydownE_1
       rect:
         serializedVersion: 2
         x: 258
@@ -5977,7 +5977,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_228
+      name: laydownE_2
       rect:
         serializedVersion: 2
         x: 290
@@ -5999,7 +5999,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_229
+      name: laydownE_3
       rect:
         serializedVersion: 2
         x: 322
@@ -6021,7 +6021,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_230
+      name: laydownE_4
       rect:
         serializedVersion: 2
         x: 354
@@ -6351,7 +6351,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_245
+      name: lookE_5
       rect:
         serializedVersion: 2
         x: 130
@@ -6373,7 +6373,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_246
+      name: laydownE_5
       rect:
         serializedVersion: 2
         x: 258
@@ -6395,7 +6395,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_247
+      name: laydownE_6
       rect:
         serializedVersion: 2
         x: 290
@@ -6417,7 +6417,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_248
+      name: laydownE_7
       rect:
         serializedVersion: 2
         x: 322
@@ -6439,7 +6439,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_249
+      name: laydownE_8
       rect:
         serializedVersion: 2
         x: 354
@@ -6659,7 +6659,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_259
+      name: lookSE_1
       rect:
         serializedVersion: 2
         x: 130
@@ -6681,7 +6681,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_260
+      name: lookSE_2
       rect:
         serializedVersion: 2
         x: 162
@@ -6703,7 +6703,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_261
+      name: lookSE_3
       rect:
         serializedVersion: 2
         x: 194
@@ -6725,7 +6725,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_262
+      name: lookSE_4
       rect:
         serializedVersion: 2
         x: 226
@@ -6747,7 +6747,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_263
+      name: laydownSE_1
       rect:
         serializedVersion: 2
         x: 258
@@ -6769,7 +6769,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_264
+      name: laydownSE_2
       rect:
         serializedVersion: 2
         x: 290
@@ -6791,7 +6791,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_265
+      name: laydownSE_3
       rect:
         serializedVersion: 2
         x: 322
@@ -6813,7 +6813,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_266
+      name: laydownSE_4
       rect:
         serializedVersion: 2
         x: 354
@@ -7143,7 +7143,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_281
+      name: lookSE_5
       rect:
         serializedVersion: 2
         x: 130
@@ -7165,7 +7165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_282
+      name: laydownSE_5
       rect:
         serializedVersion: 2
         x: 258
@@ -7187,7 +7187,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_283
+      name: laydownSE_6
       rect:
         serializedVersion: 2
         x: 290
@@ -7209,7 +7209,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_284
+      name: laydownSE_7
       rect:
         serializedVersion: 2
         x: 322
@@ -7231,7 +7231,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: orange_3_285
+      name: laydownSE_8
       rect:
         serializedVersion: 2
         x: 354
@@ -7378,170 +7378,173 @@ TextureImporter:
     nameFileIdTable:
       1: 2479484703916647004
       1walkW_: 6298371929680226527
+      laydownE_1: -8905921166241140595
+      laydownE_2: 1621902325781635457
+      laydownE_3: 5086960243492956254
+      laydownE_4: -7681372636509289150
+      laydownE_5: 1819293194126865123
+      laydownE_6: -6667023570499382194
+      laydownE_7: -6969195218383608119
+      laydownE_8: 2152996635910104752
+      laydownN1: 4606359063286700149
+      laydownNE_1: 286823987755500814
+      laydownNE_2: 351458272093448245
+      laydownNE_3: -1169309235405904616
+      laydownNE_4: -4221605458531178375
+      laydownNE_5: -8890235309627163403
+      laydownNE_6: 373387733831584353
+      laydownNE_7: -2936283606854890669
+      laydownNE_8: 643540535835453796
+      laydownNW1: -1531554435082067054
+      laydownNW_1: -1531554435082067054
+      laydownNW_2: -3420576433960751795
+      laydownNW_3: 1908561056032558526
+      laydownNW_4: 1829192307863081032
+      laydownNW_5: -6325462050616909119
+      laydownNW_6: -4272033028001995465
+      laydownNW_7: -1139612838651442105
+      laydownNW_8: -2089305257297164987
+      laydownN_1: 4606359063286700149
+      laydownN_2: 835388596226685747
+      laydownN_3: -6623859380450232122
+      laydownN_4: -160290566026788059
+      laydownN_5: 2268577459825012582
+      laydownN_6: -4335378448798407039
+      laydownN_7: 313359801756969684
+      laydownN_8: 5903217788697077878
+      laydownSE_1: -7378375311061200716
+      laydownSE_2: -3622889119292683007
+      laydownSE_3: -4736774210788879200
+      laydownSE_4: 7239755813552491730
+      laydownSE_5: -7031895088478848400
+      laydownSE_6: 3639153655764969413
+      laydownSE_7: 7382425955689512441
+      laydownSE_8: 7169983948400971186
+      laydownSW_1: -6872613473479323601
+      laydownSW_2: 1395336149825722273
+      laydownSW_3: -7593681024342694375
+      laydownSW_4: -2064814791977281100
+      laydownSW_5: -4862412009101299728
+      laydownSW_6: -2365078138407809109
+      laydownSW_7: 1892939455960989929
+      laydownSW_8: 5316434912354676469
+      laydownS_1: -2682835434827517826
+      laydownS_2: 2968206322689800692
+      laydownS_3: 7636837825818741366
+      laydownS_4: 7896046508837060291
+      laydownS_5: 3927520318978610185
+      laydownS_6: -9090148469258373345
+      laydownS_7: -8160739127905097709
+      laydownS_8: 6543331999686102529
+      laydownW_1: 1873390979797900977
+      laydownW_2: -252991571985543673
+      laydownW_3: -782359771046169578
+      laydownW_4: -2711461045660858660
+      laydownW_5: 3519794738062921244
+      laydownW_6: 803985142426091519
+      laydownW_7: -8091397719247169862
+      laydownW_8: 7181938537111800834
+      lookE_1: -1008062309657842462
+      lookE_2: -6446934582116831995
+      lookE_3: -1429017568264398399
+      lookE_4: 708973952356902318
+      lookE_5: -5039120422753558492
+      lookE_lookE_: 708973952356902318
+      lookNE_1: 2456973854878003056
+      lookNE_2: 4370534781725131914
+      lookNE_3: -291634444294961600
+      lookNE_4: -2006441600433867373
+      lookNE_5: 3649242939158851318
+      lookNW_1: -382740368989172112
+      lookNW_2: -7650006239047187903
+      lookNW_3: -7340012011122165915
+      lookNW_4: 2814307349141699883
+      lookNW_5: 1620283188368354286
+      lookN_1: -6463157274600345601
+      lookN_2: 1106847419149519088
+      lookN_3: -4579649274793881708
+      lookN_4: 5393128378281321941
+      lookN_5: 1201251609367103038
+      lookSE_1: 3063171122576337290
+      lookSE_2: 8510196824873160543
+      lookSE_3: -2874802078654797804
+      lookSE_4: -4951985342489459640
+      lookSE_5: 2528887211866185222
+      lookSW_1: 2644597652939718321
+      lookSW_2: -552785253662772704
+      lookSW_3: 8568617966767330922
+      lookSW_4: -8064308478864792497
+      lookSW_5: 8983547185190433135
+      lookS_1: -7816871207358573383
+      lookS_2: -8271582438742736013
+      lookS_3: 948980021089384907
+      lookS_4: -8546933006978531162
+      lookS_5: -1035603376012948821
+      lookW_1: 6530128742153799290
+      lookW_2: -7735995860239373897
+      lookW_3: 5319485401902814690
+      lookW_4: -5574658149939626603
+      lookW_5: -8599656337889430967
       orange_3_0: -4609707251426246449
       orange_3_10: -6998758379894851986
-      orange_3_100: -8599656337889430967
-      orange_3_101: 3519794738062921244
-      orange_3_102: 803985142426091519
-      orange_3_103: -8091397719247169862
-      orange_3_104: 7181938537111800834
       orange_3_106: -3224137004876551851
       orange_3_107: 5163320203775366832
       orange_3_108: -3399180048035979043
       orange_3_109: 4530916079038720921
       orange_3_11: -880209297663479727
-      orange_3_114: -382740368989172112
-      orange_3_115: -7650006239047187903
-      orange_3_116: -7340012011122165915
-      orange_3_117: 2814307349141699883
-      orange_3_118: -1531554435082067054
-      orange_3_119: -3420576433960751795
       orange_3_12: 7199496317850824148
-      orange_3_120: 1908561056032558526
-      orange_3_121: 1829192307863081032
       orange_3_130: 1727687843235689402
       orange_3_131: 1714353329705604860
       orange_3_132: -4408216619672816497
       orange_3_133: 3885329367689536381
-      orange_3_136: 1620283188368354286
-      orange_3_137: -6325462050616909119
-      orange_3_138: -4272033028001995465
-      orange_3_139: -1139612838651442105
-      orange_3_140: -2089305257297164987
       orange_3_142: -4757103166189520129
       orange_3_143: 6587244531209353069
       orange_3_144: 584116913368253861
       orange_3_145: -6139929886795549356
-      orange_3_150: -6463157274600345601
-      orange_3_151: 1106847419149519088
-      orange_3_152: -4579649274793881708
-      orange_3_153: 5393128378281321941
-      orange_3_154: 4606359063286700149
-      orange_3_155: 835388596226685747
-      orange_3_156: -6623859380450232122
-      orange_3_157: -160290566026788059
-      orange_3_16: -7816871207358573383
       orange_3_166: 8937980015149751169
       orange_3_167: -6600778407543381043
       orange_3_168: 1671855562173706309
       orange_3_169: -4347980876133059163
-      orange_3_17: -8271582438742736013
-      orange_3_173: 1201251609367103038
-      orange_3_174: 2268577459825012582
-      orange_3_175: -4335378448798407039
-      orange_3_176: 313359801756969684
-      orange_3_177: 5903217788697077878
       orange_3_179: 89685399711343739
-      orange_3_18: 948980021089384907
       orange_3_180: 6069080369899003806
       orange_3_181: -1159572978193814375
       orange_3_182: -5665273834221971903
-      orange_3_187: 2456973854878003056
-      orange_3_188: 4370534781725131914
-      orange_3_189: -291634444294961600
-      orange_3_19: -8546933006978531162
-      orange_3_190: -2006441600433867373
-      orange_3_191: 286823987755500814
-      orange_3_192: 351458272093448245
-      orange_3_193: -1169309235405904616
-      orange_3_194: -4221605458531178375
-      orange_3_20: -2682835434827517826
       orange_3_203: 3198560572025910583
       orange_3_204: 7162178987978437138
       orange_3_205: 2161230602241923361
       orange_3_206: -7265680209699584406
-      orange_3_209: 3649242939158851318
-      orange_3_21: 2968206322689800692
-      orange_3_210: -8890235309627163403
-      orange_3_211: 373387733831584353
-      orange_3_212: -2936283606854890669
-      orange_3_213: 643540535835453796
       orange_3_215: 4133511638503359336
       orange_3_216: -6057435222982555818
       orange_3_217: -4879760524195397285
       orange_3_218: -2712004360757496129
-      orange_3_22: 7636837825818741366
-      orange_3_223: -1008062309657842462
-      orange_3_224: -6446934582116831995
-      orange_3_225: -1429017568264398399
-      orange_3_226: 708973952356902318
-      orange_3_227: -8905921166241140595
-      orange_3_228: 1621902325781635457
-      orange_3_229: 5086960243492956254
-      orange_3_23: 7896046508837060291
-      orange_3_230: -7681372636509289150
       orange_3_239: 7678779524831421974
       orange_3_240: -3648708308504348725
       orange_3_241: -1516602135923005221
       orange_3_242: 910720277931922091
-      orange_3_245: -5039120422753558492
-      orange_3_246: 1819293194126865123
-      orange_3_247: -6667023570499382194
-      orange_3_248: -6969195218383608119
-      orange_3_249: 2152996635910104752
       orange_3_251: 8470115215733408276
       orange_3_252: -2597899333398314131
       orange_3_253: -5758232159369051711
       orange_3_254: -576889160327694974
-      orange_3_259: 3063171122576337290
-      orange_3_260: 8510196824873160543
-      orange_3_261: -2874802078654797804
-      orange_3_262: -4951985342489459640
-      orange_3_263: -7378375311061200716
-      orange_3_264: -3622889119292683007
-      orange_3_265: -4736774210788879200
-      orange_3_266: 7239755813552491730
       orange_3_275: 6957075147962212960
       orange_3_276: -1315043109093592353
       orange_3_277: -2847206272325694906
       orange_3_278: 1919416867709394769
-      orange_3_28: -1035603376012948821
-      orange_3_281: 2528887211866185222
-      orange_3_282: -7031895088478848400
-      orange_3_283: 3639153655764969413
-      orange_3_284: 7382425955689512441
-      orange_3_285: 7169983948400971186
       orange_3_287: 6518792005764644314
       orange_3_288: 7036251051000665374
       orange_3_289: 2649051336293140230
-      orange_3_29: 3927520318978610185
       orange_3_290: -7047692695525380590
-      orange_3_30: -9090148469258373345
-      orange_3_31: -8160739127905097709
-      orange_3_32: 6543331999686102529
       orange_3_34: -199311592002903272
       orange_3_35: 1580090581831850036
       orange_3_36: -9146972909698017821
       orange_3_37: -481892409560455364
-      orange_3_42: 2644597652939718321
-      orange_3_43: -552785253662772704
-      orange_3_44: 8568617966767330922
-      orange_3_45: -8064308478864792497
-      orange_3_46: -6872613473479323601
-      orange_3_47: 1395336149825722273
-      orange_3_48: -7593681024342694375
-      orange_3_49: -2064814791977281100
       orange_3_58: 6990508907685405416
       orange_3_59: -3974155454615825613
       orange_3_60: -2241334307932884406
       orange_3_61: 2707803317026040475
-      orange_3_64: 8983547185190433135
-      orange_3_65: -4862412009101299728
-      orange_3_66: -2365078138407809109
-      orange_3_67: 1892939455960989929
-      orange_3_68: 5316434912354676469
       orange_3_70: 697160661703799278
       orange_3_71: -8829715320819612233
       orange_3_72: -468221078515164588
       orange_3_73: -4064002596953289374
-      orange_3_78: 6530128742153799290
-      orange_3_79: -7735995860239373897
-      orange_3_80: 5319485401902814690
-      orange_3_81: -5574658149939626603
-      orange_3_82: 1873390979797900977
-      orange_3_83: -252991571985543673
-      orange_3_84: -782359771046169578
-      orange_3_85: -2711461045660858660
       orange_3_9: -1118960611847983253
       orange_3_94: -2986331928827784254
       orange_3_95: -1723884102157287465

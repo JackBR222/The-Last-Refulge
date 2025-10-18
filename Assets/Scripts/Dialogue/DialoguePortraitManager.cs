@@ -65,7 +65,7 @@ public class DialoguePortraitManager : MonoBehaviour
             case "MaracajaVoice":
                 return maracajaVoice;
 
-            case "VowelA":
+            case "JabutiVoice":
                 return vowelSoundA;
 
             default:

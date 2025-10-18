@@ -16,7 +16,6 @@ public class ChoiceEventManager : MonoBehaviour
     private int totalScore = 0;
     private HashSet<string> selectedChoices = new HashSet<string>();
 
-    // Chamada a partir do InkDialogueManager
     public void RegisterChoice(string choiceID, int points)
     {
         if (!selectedChoices.Contains(choiceID))

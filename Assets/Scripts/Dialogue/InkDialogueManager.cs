@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class InkDialogueManager : MonoBehaviour
@@ -31,9 +32,12 @@ public class InkDialogueManager : MonoBehaviour
     private Coroutine typingCoroutine;
     private AudioSource currentVoiceAudio;
 
+    private PlayerInput playerInput;
+    private InputAction interactAction;
+
     private InkTagEventTrigger[] tagEventTriggers;
 
-    private NPCInteractDialogue currentNPC; // Referência ao NPC que iniciou diálogo
+    private NPCInteractDialogue currentNPC;
 
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
@@ -53,17 +57,42 @@ public class InkDialogueManager : MonoBehaviour
 
         if (playerMove == null)
             Debug.LogError("PlayerMove não atribuído!");
-    }
 
-    void Start()
-    {
-        if (inkJsonFile != null)
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
         {
-            // Não iniciar diálogo automaticamente aqui.
+            playerInput = player.GetComponent<PlayerInput>();
+            if (playerInput != null)
+                interactAction = playerInput.actions["Interact"];
         }
         else
+            Debug.LogError("Jogador com tag 'Player' não encontrado!");
+    }
+
+    void Update()
+    {
+        if (dialoguePanel.activeSelf && interactAction != null && interactAction.triggered)
         {
-            Debug.LogError("Arquivo JSON do Ink não foi atribuído.");
+            if (typingCoroutine != null)
+            {
+                StopCoroutine(typingCoroutine);
+                typingCoroutine = null;
+
+                if (currentVoiceAudio != null)
+                {
+                    currentVoiceAudio.Stop();
+                    currentVoiceAudio.loop = false;
+                    currentVoiceAudio = null;
+                }
+
+                dialogueText.text = currentStory.currentText.Trim();
+                HandleTags(currentStory.currentTags);
+                ShowChoices();
+            }
+            else if (currentStory != null && currentStory.canContinue)
+            {
+                NextLine();
+            }
         }
     }
 
@@ -75,12 +104,15 @@ public class InkDialogueManager : MonoBehaviour
         if (playerMove != null)
             playerMove.canMove = false;
 
-        // Pega todos os InkTagEventTriggers ativos na cena
         tagEventTriggers = FindObjectsByType<InkTagEventTrigger>(FindObjectsSortMode.None);
 
-        currentNPC = npc; // Guarda referência ao NPC
+        currentNPC = npc;
 
         NextLine();
+    }
+    public bool IsDialogueActive()
+    {
+        return dialoguePanel.activeSelf && currentStory != null;
     }
 
     public void NextLine()
@@ -208,7 +240,6 @@ public class InkDialogueManager : MonoBehaviour
                     break;
             }
 
-            // Notifica eventos externos
             if (tagEventTriggers != null)
             {
                 foreach (var trigger in tagEventTriggers)
@@ -231,7 +262,7 @@ public class InkDialogueManager : MonoBehaviour
 
         if (currentNPC != null)
         {
-            currentNPC.OnDialogueEnd();  // <- Isso é o que reinicia a possibilidade de interagir
+            currentNPC.OnDialogueEnd();
             currentNPC = null;
         }
     }

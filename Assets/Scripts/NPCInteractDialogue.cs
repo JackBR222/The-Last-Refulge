@@ -9,7 +9,6 @@ public class NPCInteractDialogue : MonoBehaviour
     [SerializeField] private InkDialogueManager dialogueManager;
 
     [Header("Condição de Direção")]
-    [Tooltip("Ângulo máximo permitido entre a direção que o player está olhando e o NPC para permitir interação.")]
     [Range(10f, 90f)]
     [SerializeField] private float maxFacingAngle = 35f;
 
@@ -18,7 +17,7 @@ public class NPCInteractDialogue : MonoBehaviour
 
     private bool playerInRange = false;
     private bool isDialogueActive = false;
-    private bool canTalk = true;  // Controle se o NPC pode mais iniciar diálogo
+    private bool canTalk = true;
 
     private PlayerInput playerInput;
     private InputAction interactAction;
@@ -82,7 +81,6 @@ public class NPCInteractDialogue : MonoBehaviour
     {
         Vector2 directionToNPC = (transform.position - playerTransform.position).normalized;
         Vector2 playerFacingDirection = playerMove.LastDirection.normalized;
-
         float angle = Vector2.Angle(directionToNPC, playerFacingDirection);
         return angle <= maxFacingAngle;
     }
@@ -110,13 +108,15 @@ public class NPCInteractDialogue : MonoBehaviour
         isDialogueActive = false;
     }
 
-    /// <summary>
-    /// Desativa a possibilidade de falar com o NPC (chame via evento InkTagEventTrigger)
-    /// </summary>
     public void DisableInteraction()
     {
         canTalk = false;
         if (visualCue != null)
             visualCue.SetActive(false);
+    }
+
+    public void SetInkFile(TextAsset newInkFile)
+    {
+        inkFile = newInkFile;
     }
 }
