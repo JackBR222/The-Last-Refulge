@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4782855775136762227}
   m_Layer: 0
   m_Name: NPCSarue
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +132,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00027227402, y: -0.0032091737}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -142,7 +142,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8428545, y: 0.6855063}
   m_EdgeRadius: 0
 --- !u!58 &6738180231923793250
 CircleCollider2D:
@@ -226,7 +226,7 @@ MonoBehaviour:
   stoppingDistance: 1.3
   closeEnoughDistance: 1
   rb: {fileID: 6945628494614106259}
-  animator: {fileID: 0}
+  animator: {fileID: 3988204470648755172}
 --- !u!114 &4513731631429325763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +367,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3561050104455048662}
   - component: {fileID: 3163930353613257148}
+  - component: {fileID: 3988204470648755172}
+  - component: {fileID: 7441295325038357814}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -433,20 +435,57 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -107841615
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6872613473479323601, guid: 604141ce9d646ec408af019d17d53701, type: 3}
+  m_Sprite: {fileID: 2668419430850956262, guid: 4c130b33bfe4d8e4a942721adef00a74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.13, y: 0.27}
+  m_Size: {x: 0.27, y: 0.21}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3988204470648755172
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5611526550195395271}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 52b8d93b11ca9754d85083b795c885e8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7441295325038357814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5611526550195395271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e5a922c28beb745a8ac4eb2d2394b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DepthSorter
+  sortingOrderBase: 5000
+  offset: 0
+  runOnce: 0
 --- !u!1 &9122892965962702880
 GameObject:
   m_ObjectHideFlags: 0

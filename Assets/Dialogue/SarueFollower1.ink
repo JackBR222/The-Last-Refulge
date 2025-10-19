@@ -1,19 +1,19 @@
 -> inicio
 
 === inicio ===
-#speaker:Sarue
+#speaker:Saruê
 #portrait:SarueNeutral
 #audio:SarueVoice
-SARUÊ: Quer que eu volte a te seguir?
+Quer que eu volte a te seguir?
 
 * [Sim] -> sim
 * [Não] -> nao
 
 === sim ===
-#speaker:Sarue
+#speaker:Saruê
 #portrait:SarueNeutral
 #audio:SarueVoice
-SARUÊ: Ok! #outcome:sarue_seguindo
+Ok! #outcome:sarue_seguindo
 
 -> END
 
@@ -21,6 +21,6 @@ SARUÊ: Ok! #outcome:sarue_seguindo
 #speaker:Sarue
 #portrait:SarueNeutral
 #audio:SarueVoice
-SARUÊ: Então vou ficar aqui.
+Então vou ficar aqui.
 
 -> END

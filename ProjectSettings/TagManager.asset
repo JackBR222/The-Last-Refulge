@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Pushable
   - Box
+  - NPC
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - obstaculo
+  - Button
   - Water
   - UI
   - 
@@ -43,5 +44,16 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tileset_Ground
+    uniqueID: 3341943593
+    locked: 0
+  - name: WorldObjects
+    uniqueID: 4187125681
+    locked: 0
+  - name: Tileset_FG1
+    uniqueID: 2639889357
+    locked: 0
   m_RenderingLayers:
   - Default
+  - Button
+  - PlayerNPC

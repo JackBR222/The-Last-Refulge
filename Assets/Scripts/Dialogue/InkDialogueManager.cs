@@ -89,9 +89,16 @@ public class InkDialogueManager : MonoBehaviour
                 HandleTags(currentStory.currentTags);
                 ShowChoices();
             }
-            else if (currentStory != null && currentStory.canContinue)
+            else if (currentStory != null)
             {
-                NextLine();
+                if (currentStory.canContinue)
+                {
+                    NextLine();
+                }
+                else if (currentStory.currentChoices.Count == 0)
+                {
+                    EndDialogue();
+                }
             }
         }
     }
@@ -110,6 +117,18 @@ public class InkDialogueManager : MonoBehaviour
 
         NextLine();
     }
+
+    public void DialogueTrigger(TextAsset customInkFile)
+    {
+        if (customInkFile == null)
+        {
+            Debug.LogError("Ink JSON fornecido via evento é nulo!");
+            return;
+        }
+
+        StartDialogue(customInkFile, null);
+    }
+
     public bool IsDialogueActive()
     {
         return dialoguePanel.activeSelf && currentStory != null;
@@ -166,6 +185,8 @@ public class InkDialogueManager : MonoBehaviour
 
         HandleTags(currentStory.currentTags);
         ShowChoices();
+
+        typingCoroutine = null;
     }
 
     private void ShowChoices()
@@ -252,6 +273,7 @@ public class InkDialogueManager : MonoBehaviour
         if (portraitManager != null)
             currentVoiceAudio = portraitManager.HandleTags(speakerName, portraitName, audioName);
     }
+
 
     private void EndDialogue()
     {

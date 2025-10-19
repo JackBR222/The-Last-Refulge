@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 [RequireComponent(typeof(Collider2D))]
 public class NPCInteractDialogue : MonoBehaviour
@@ -15,9 +16,13 @@ public class NPCInteractDialogue : MonoBehaviour
     [Header("Indicador Visual")]
     [SerializeField] private GameObject visualCue;
 
+    [Header("Cooldown de Interação")]
+    [SerializeField] private float interactionCooldown = 0.5f;
+
     private bool playerInRange = false;
     private bool isDialogueActive = false;
     private bool canTalk = true;
+    private bool isCooldown = false;
 
     private PlayerInput playerInput;
     private InputAction interactAction;
@@ -50,7 +55,7 @@ public class NPCInteractDialogue : MonoBehaviour
 
     private void Update()
     {
-        if (!canTalk)
+        if (!canTalk || isCooldown)
         {
             if (visualCue != null)
                 visualCue.SetActive(false);
@@ -106,6 +111,14 @@ public class NPCInteractDialogue : MonoBehaviour
     public void OnDialogueEnd()
     {
         isDialogueActive = false;
+        StartCoroutine(InteractionCooldown());
+    }
+
+    private IEnumerator InteractionCooldown()
+    {
+        isCooldown = true;
+        yield return new WaitForSeconds(interactionCooldown);
+        isCooldown = false;
     }
 
     public void DisableInteraction()
@@ -118,5 +131,16 @@ public class NPCInteractDialogue : MonoBehaviour
     public void SetInkFile(TextAsset newInkFile)
     {
         inkFile = newInkFile;
+    }
+
+    public void StartDialogueExternal()
+    {
+        if (!isDialogueActive && canTalk && !isCooldown)
+        {
+            isDialogueActive = true;
+            if (visualCue != null)
+                visualCue.SetActive(false);
+            dialogueManager.StartDialogue(inkFile, this);
+        }
     }
 }

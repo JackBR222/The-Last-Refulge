@@ -1,20 +1,20 @@
 -> inicio
 
 === inicio ===
-#speaker:Sarue
+#speaker:Saruê
 #portrait:SarueNeutral
 #audio:SarueVoice
-SARUÊ: (olhando em volta, tremendo) Eles... eles ainda estão por aí? Você os viu?
+E-eles ainda estão por aí? Você... sabe, Maracajá?
 
 #speaker:Maracajá
 #portrait:MaracajaNeutral
 #audio:MaracajaVoice
-MARACAJÁ: Quem? Do que você está falando?
+Quem? Do que você tá falando?
 
-#speaker:Sarue
+#speaker:Saruê
 #portrait:SarueNeutral
 #audio:SarueVoice
-SARUÊ: Eles... os caçadores. Sempre aparecem à noite, com luzes, cães e aquelas vozes...
+Os caçadores! À noite... luzes fortes, cães latindo, vozes gritando da gente!
 
 * [Tentar acalmar o Saruê] -> acalmar
 * [Insistir em saber mais] -> insistir
@@ -23,17 +23,22 @@ SARUÊ: Eles... os caçadores. Sempre aparecem à noite, com luzes, cães e aque
 #speaker:Maracajá
 #portrait:MaracajaNeutral
 #audio:MaracajaVoice
-MARACAJÁ: Ei, calma, Saruê. Se houvesse alguém perigoso por perto, eu já teria percebido. Você está seguro agora.
+Não vejo ninguém por aqui. Parece seguro... por enquanto.
 
-#speaker:Sarue
+#speaker:Saruê
 #portrait:SarueNeutral
 #audio:SarueVoice
-SARUÊ: (respirando fundo) Eu... ok. Talvez você tenha razão. É que... eles são rápidos, têm armadilhas. Levaram meus primos semana passada. Mas ouvi dizer que andam mais ativos no final do mês...
+Eles são espertos. Armam laços, deixam comida... semana passada levaram meus primos. Dizem que caçam mais quando o céu fica vermelho.
 
-#speaker:Sarue
+#speaker:Saruê
 #portrait:SarueNeutral
 #audio:SarueVoice
-SARUÊ: Se você vai enfrentar isso, eu vou com você. Não vou deixar outro amigo desaparecer. #outcome:acalmou_sarue
+Se você for, eu vou junto. Não vou deixar outro amigo ser levado.
+
+#speaker:Maracajá
+#portrait:MaracajaNeutral
+#audio:MaracajaVoice
+Tá. Mas não me atrasa. #outcome:acalmou_sarue
 
 -> END
 
@@ -41,16 +46,26 @@ SARUÊ: Se você vai enfrentar isso, eu vou com você. Não vou deixar outro ami
 #speaker:Maracajá
 #portrait:MaracajaNeutral
 #audio:MaracajaVoice
-MARACAJÁ: Você precisa me contar tudo, Saruê. É importante.
+Deixe de enrolar. Quero que me conte tudo!
 
-#speaker:Sarue
+#speaker:Saruê
 #portrait:SarueNeutral
 #audio:SarueVoice
-SARUÊ: Eu disse que não devia! Mas... eles usam uma fumaça que apaga o cheiro... e... e marcam árvores com tinta vermelha...
+Eles usam fumaça que apaga cheiro... marcam árvores com tinta vermelha. É assim que acham a gente.
 
-#speaker:Sarue
+#speaker:Maracajá
+#portrait:MaracajaNeutral
+#audio:MaracajaVoice
+Tinta vermelha...? Então eles já passaram por aqui?
+
+#speaker:Saruê
 #portrait:SarueNeutral
 #audio:SarueVoice
-SARUÊ: (começa a tremer) Não... não posso continuar. Já falei demais. Me deixa em paz! #outcome:assustou_sarue
+Não... não fala alto! Eu já falei demais! Me deixe em paz!
+
+#speaker:Maracajá
+#portrait:MaracajaNeutral
+#audio:MaracajaVoice
+Tá, tá. Fica esperto. #outcome:assustou_sarue
 
 -> END
